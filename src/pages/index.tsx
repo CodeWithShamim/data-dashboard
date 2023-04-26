@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Dashboard from "@/pages/dashboard";
 import Header from "@/components/Header/Header";
 import SideMenu from "@/components/SideMenu/SideMenu";
+import Login from "@/pages/login/Login";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Header />
         <SideMenu />
         <Dashboard />
+        <Login />
       </main>
     </>
   );
