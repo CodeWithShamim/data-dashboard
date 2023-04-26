@@ -5,10 +5,13 @@ import Dashboard from "@/pages/dashboard";
 import Header from "@/components/Header/Header";
 import SideMenu from "@/components/SideMenu/SideMenu";
 import Login from "@/pages/login/Login";
+import { useSession } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { data: session } = useSession();
+
   return (
     <>
       <Head>
@@ -19,8 +22,14 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header />
-        <SideMenu />
-        <Dashboard />
+
+        {session && (
+          <>
+            <SideMenu />
+            <Dashboard />
+          </>
+        )}
+        
         <Login />
       </main>
     </>

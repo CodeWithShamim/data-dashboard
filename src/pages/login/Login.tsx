@@ -1,17 +1,24 @@
+import Button from "@mui/material/Button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
 
 function Login() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+
+  if (status === "loading") return <div>Loading...</div>;
+
   if (session) {
     return (
-      <div>
-        Signed in as {session?.user?.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
+      <Button variant="contained" color="error" onClick={() => signOut()}>
+        Sign out
+      </Button>
     );
   }
-  return <button onClick={() => signIn()}>Sign in</button>;
+  return (
+    <Button variant="contained" color="secondary" onClick={() => signIn()}>
+      Sign in
+    </Button>
+  );
 }
 
 export default Login;
