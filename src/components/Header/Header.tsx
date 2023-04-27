@@ -137,7 +137,7 @@ function Header() {
             ))}
           </Box>
 
-          <ThemeToggleButton/>
+          <ThemeToggleButton />
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
