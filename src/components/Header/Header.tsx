@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { signIn, signOut, useSession } from "next-auth/react";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -47,7 +48,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ marginBottom: "40px" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -66,7 +67,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            DASHBOARD
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -122,7 +123,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            DASHBOARD
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -135,6 +136,8 @@ function Header() {
               </Button>
             ))}
           </Box>
+
+          <ThemeToggleButton/>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
