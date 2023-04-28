@@ -13,9 +13,9 @@ export const menuListTranslations = [
   "Sign Out",
 ];
 export const menuListIcons = [
-  <HomeIcon />,
-  <EqualizerIcon />,
-  <Person2Icon />,
-  <Settings />,
-  <ExitToAppIcon />,
+  <HomeIcon key="home" />,
+  <EqualizerIcon key="analytics" />,
+  <Person2Icon key="profile" />,
+  <Settings key="settings" />,
+  <ExitToAppIcon key="signout" />,
 ];
