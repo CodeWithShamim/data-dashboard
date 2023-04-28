@@ -7,6 +7,7 @@ import { CssBaseline } from "@mui/material";
 import lightTheme from "@/themes/lightTheme";
 import darkTheme from "@/themes/darkTheme";
 import Layout from "@/components/Layout";
+import NextTopLoader from "nextjs-toploader";
 
 export const colorModeContext = React.createContext({
   toggleColorMode: () => {},
@@ -57,6 +58,7 @@ export default function App({
       >
         <SessionProvider session={session}>
           <CssBaseline />
+          <NextTopLoader color="red"/>
           <Layout>
             <Component {...pageProps} />
           </Layout>
