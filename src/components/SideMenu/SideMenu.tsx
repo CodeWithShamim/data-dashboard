@@ -17,6 +17,7 @@ import {
   menuRouteList,
 } from "@/utils/Menu";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const drawerWidth = 240;
 
@@ -48,6 +49,10 @@ const SideMenu = () => {
 
   const handleDrawerToggle = () => {
     setOpen((preValue) => !preValue);
+  };
+
+  const handleListItemClick = (text: string) => {
+    text === "Sign Out" ? signOut() : null;
   };
 
   return (
@@ -102,6 +107,9 @@ const SideMenu = () => {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
+                title={text}
+                aria-label={text}
+                onClick={() => handleListItemClick(text)}
               >
                 <ListItemIcon
                   sx={{

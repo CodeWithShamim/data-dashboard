@@ -18,7 +18,7 @@ const Layout = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.layout}>
+      <main className={session ? styles.layout : styles.defaultLayout}>
         {session && <SideMenu />}
         {props.children}
       </main>
