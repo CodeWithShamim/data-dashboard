@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import lightTheme from "@/themes/lightTheme";
 import darkTheme from "@/themes/darkTheme";
+import Layout from "@/components/Layout";
 
 export const colorModeContext = React.createContext({
   toggleColorMode: () => {},
@@ -32,7 +33,7 @@ export default function App({
   const darkThemeSelect = React.useMemo(
     () =>
       createTheme({
-        ...darkTheme
+        ...darkTheme,
       }),
     [mode]
   );
@@ -56,7 +57,9 @@ export default function App({
       >
         <SessionProvider session={session}>
           <CssBaseline />
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </SessionProvider>
       </ThemeProvider>
     </colorModeContext.Provider>

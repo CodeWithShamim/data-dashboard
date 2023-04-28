@@ -94,7 +94,7 @@ const SideMenu = () => {
           <ListItem key={text} disablePadding sx={{ display: "block" }}>
             <Link
               className={styles.link}
-              href={`dashboard/${menuRouteList[index]}`}
+              href={`/dashboard/${menuRouteList[index]}`}
             >
               <ListItemButton
                 sx={{
