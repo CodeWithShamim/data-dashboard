@@ -5,7 +5,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { colorModeContext } from "@/pages/_app";
 
 const ThemeToggleButton = () => {
-  const mobileCheck = useMediaQuery("min-width: 500px");
+  const mobileCheck = useMediaQuery("(min-width: 600px)");
   const colorMode = React.useContext(colorModeContext);
   const theme = useTheme();
 

@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import React, { useEffect } from "react";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import lightTheme from "@/themes/lightTheme";
 import darkTheme from "@/themes/darkTheme";
@@ -32,7 +32,7 @@ export default function App({
   const darkThemeSelect = React.useMemo(
     () =>
       createTheme({
-        ...darkTheme,
+        ...darkTheme
       }),
     [mode]
   );
